@@ -22,7 +22,8 @@
 
 /* CSS Modules feature */
 .nav a:global(.active) {
-  color: var(--color-brand--2);
+  /* color: var(--color-brand--2); */
+  color: #00c46a;
 }
 
 a.ctaLink:link,
