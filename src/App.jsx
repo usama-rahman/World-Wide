@@ -8,7 +8,6 @@ import AppLayout from "./pages/AppLayout";
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />} />
