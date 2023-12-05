@@ -140,7 +140,6 @@ function CitiesProvider({ children }) {
         cities,
         isLoading,
         currentCity,
-
         createCity,
         getCity,
         deletCity,
