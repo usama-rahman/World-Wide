@@ -38,8 +38,7 @@ function AuthProvider({ children }) {
   }
   return (
     <AuthContext.Provider value={(user, isAutenticated, login, logout)}>
-      {" "}
-      {children}{" "}
+      {children}
     </AuthContext.Provider>
   );
 }
