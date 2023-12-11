@@ -15,7 +15,9 @@ export default function Login() {
   function handelSubmit(e) {
     e.preventDefault();
 
-    if (email && password) login(email, password);
+    if (email && password) {
+      login(email, password);
+    }
   }
 
   useEffect(
@@ -29,7 +31,7 @@ export default function Login() {
     <main className={styles.login}>
       <PageNav />
 
-      <form className={styles.form} onSubmit={handelSubmit}>
+      <form className={styles.form}>
         <div className={styles.row}>
           <label htmlFor="email">Email address</label>
           <input
@@ -51,7 +53,9 @@ export default function Login() {
         </div>
 
         <div>
-          <Button type="primary">Login</Button>
+          <Button type="primary" onClick={handelSubmit}>
+            Login
+          </Button>
         </div>
       </form>
     </main>
