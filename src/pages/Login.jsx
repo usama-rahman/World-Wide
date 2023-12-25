@@ -7,9 +7,9 @@ import { useEffect, useState } from "react";
 
 export default function Login() {
   const [email, setEmail] = useState("jack@example.com");
-  const [password, setPassword] = useState("qwerty👀");
+  const [password, setPassword] = useState("qwerty");
 
-  const { login, isAutenticated } = useAuth;
+  const { login, isAutenticated } = useAuth();
   const navigate = useNavigate();
 
   function handelSubmit(e) {
@@ -31,7 +31,7 @@ export default function Login() {
     <main className={styles.login}>
       <PageNav />
 
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handelSubmit}>
         <div className={styles.row}>
           <label htmlFor="email">Email address</label>
           <input
@@ -53,9 +53,7 @@ export default function Login() {
         </div>
 
         <div>
-          <Button type="primary" onClick={handelSubmit}>
-            Login
-          </Button>
+          <Button type="primary">Login</Button>
         </div>
       </form>
     </main>
