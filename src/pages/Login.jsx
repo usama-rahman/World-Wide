@@ -10,7 +10,7 @@ export default function Login() {
   const [password, setPassword] = useState("qwerty👀");
 
   const { login, isAutenticated } = useAuth;
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   function handelSubmit(e) {
     e.preventDefault();
