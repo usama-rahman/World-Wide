@@ -6,15 +6,15 @@ const AuthContext = createContext();
 
 const initialStage = {
   user: null,
-  isAutenticated: false,
+  isAuthenticated: false,
 };
 
 function reducer(state, action) {
   switch (action.type) {
     case "login":
-      return { ...state, user: action.payload, isAutenticated: true };
+      return { ...state, user: action.payload, isAuthenticated: true };
     case "logout":
-      return { ...state, user: null, isAutenticated: false };
+      return { ...state, user: null, isAuthenticated: false };
     default:
       throw new Error("Unknown action");
   }
@@ -28,7 +28,7 @@ const FAKE_USER = {
 };
 
 function AuthProvider({ children }) {
-  const [{ user, isAutenticated }, dispatch] = useReducer(
+  const [{ user, isAuthenticated }, dispatch] = useReducer(
     reducer,
     initialStage
   );
@@ -43,7 +43,7 @@ function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, isAutenticated, login, logout }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

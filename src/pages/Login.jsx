@@ -9,10 +9,10 @@ export default function Login() {
   const [email, setEmail] = useState("jack@example.com");
   const [password, setPassword] = useState("qwerty");
 
-  const { login, isAutenticated } = useAuth();
+  const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  function handelSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
 
     if (email && password) {
@@ -22,16 +22,16 @@ export default function Login() {
 
   useEffect(
     function () {
-      if (isAutenticated) navigate("/app", { replace: true });
+      if (isAuthenticated) navigate("/app", { replace: true });
     },
-    [isAutenticated, navigate]
+    [isAuthenticated, navigate]
   );
 
   return (
     <main className={styles.login}>
       <PageNav />
 
-      <form className={styles.form} onSubmit={handelSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.row}>
           <label htmlFor="email">Email address</label>
           <input

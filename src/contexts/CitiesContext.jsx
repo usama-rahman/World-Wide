@@ -3,7 +3,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useReducer } from "react";
 
-const URL = "http://localhost:9000/cities";
+const URL = "http://localhost:8000/cities";
 
 const CitiesContext = createContext();
 
@@ -56,7 +56,7 @@ function reducer(state, action) {
       };
 
     default:
-      throw new Error(" Unknown action type ");
+      throw new Error("Unknown action type");
   }
 }
 
