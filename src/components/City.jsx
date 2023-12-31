@@ -23,7 +23,7 @@ function City() {
       getCity(id);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [id]
+    [id, getCity]
   );
 
   const { cityName, emoji, date, notes } = currentCity;
